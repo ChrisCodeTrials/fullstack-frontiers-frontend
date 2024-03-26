@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
+
+
+.quote-text,
+.opening-quote,
+.closing-quote,
+.quote-author{
+    font-style: italic;
+}
+
+.opening-quote,
+.closing-quote{
+    font-size: 40px;
+    font-weight: bold;
+    font-family: "Cinzel Decorative";
+    padding-right: 10px;
+}
+
+.quote-detail-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quote-text-wrapper{
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: fit-content;
+    align-items: center;
+}
+
+.opening-quote{
+    margin-right: auto;
+}
+
+.quote-text{
+    padding: 0px 25px;
+}
+
+.closing-quote{
+    margin-left: auto;
+}
+
