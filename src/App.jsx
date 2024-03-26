@@ -10,10 +10,11 @@ import FindDoctor from "./Components/FindDoctor";
 import MotivationalQuotes from "./Components/MotivationalQuotes";
 import AboutUs from "./Components/AboutUs";
 import Resources from "./Components/Resources";
+import QuoteDetails from "./Components/QuoteDetails";
 
 function App() {
   return (
-    <BrowserRouter>
+    <div>
       <HeaderNav />
       <Routes>
         <Route path="/" element={<LandingPage />} />
@@ -25,9 +26,11 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/find-doctor" element={<FindDoctor />} />
           <Route path="/resources" element={<Resources />} />
+          <Route path="/quotes/quote/:id" element={<QuoteDetails />}/>
         </Route>
       </Routes>
-    </BrowserRouter>
+
+    </div>
   );
 }
 
