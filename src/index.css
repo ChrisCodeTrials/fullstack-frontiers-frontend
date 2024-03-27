@@ -1,3 +1,11 @@
+:root {
+  --lavender-blush: #f5e6e8ff;
+  --thistle: #d5c6e0ff;
+  --rose-quartz: #aaa1c8ff;
+  --mountbatten-pink: #967aa1ff;
+  --space-cadet: #192a51ff;
+}
+
 * {
   margin: 0;
   padding: 0;
