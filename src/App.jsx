@@ -7,7 +7,7 @@ import Dashboard from "./Components/Dashboard";
 import HeaderNav from "./Components/HeaderNav";
 import LandingPage from "./Components/LandingPage";
 import FindDoctor from "./Components/FindDoctor";
-import MotivationalQuotes from "./Components/MotivationalQuotes";
+import MotivationalQuotes from "./Components/MotivationalQuotesForm";
 import AboutUs from "./Components/AboutUs";
 import Resources from "./Components/Resources";
 import QuoteDetails from "./Components/QuoteDetails";

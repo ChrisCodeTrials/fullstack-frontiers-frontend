@@ -21,6 +21,8 @@ const AppointmentDetails = () => {
   return (
     <div>
         <h1>Appointment Details</h1>
+        {console.log( appointment)}
+        {console.log(user)}
         {appointment.user_id === user_id ? (
             <div>
                 Hi
