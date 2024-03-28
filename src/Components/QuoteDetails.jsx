@@ -13,6 +13,8 @@ const QuoteDetails = () => {
         .then((resJSON)=> setQuote(resJSON))
     },[id])
 
+    
+
   if(Object.keys(quote).length === 0) return null
 
   return (
