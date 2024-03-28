@@ -11,6 +11,7 @@ import MotivationalQuotes from "./Components/MotivationalQuotesForm";
 import AboutUs from "./Components/AboutUs";
 import Resources from "./Components/Resources";
 import QuoteDetails from "./Components/QuoteDetails";
+import AppointmentDetails from "./Components/AppointmentDetails";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/find-doctor" element={<FindDoctor />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/quotes/quote/:id" element={<QuoteDetails />}/>
+          <Route path="/appointments/appointment/:appointment_id" element={<AppointmentDetails />} />
         </Route>
       </Routes>
 
