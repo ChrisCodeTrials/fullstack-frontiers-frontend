@@ -21,11 +21,11 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/quotes" element={<MotivationalQuotes />} />
         <Route path="/about" element={<AboutUs />} />
         <Route element={<ProtectedRoute />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/find-doctor" element={<FindDoctor />} />
+          <Route path="/quotes" element={<MotivationalQuotes />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/quotes/quote/:id" element={<QuoteDetails />}/>
           <Route path="/appointments/appointment/:appointment_id" element={<AppointmentDetails />} />
