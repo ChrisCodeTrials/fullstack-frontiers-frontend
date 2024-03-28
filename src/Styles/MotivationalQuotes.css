@@ -1,73 +1,68 @@
-* {
-    background-color: #F5E6E8;
-}
-
 .form-header {
-    padding-bottom: 20px;
-    margin-top: 150px;
-    margin-bottom: 20px;
-    font-weight: 300;
+  padding-bottom: 20px;
+  margin-top: 150px;
+  margin-bottom: 20px;
+  font-weight: 300;
 }
 
 .form {
-    background-color: #f9f9f9;
-    height: 300px;
+  background-color: #f9f9f9;
+  height: 300px;
 }
 
 .form-page {
- display:flex;
- flex-direction: column;
- align-items: center;
- padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
 
 .form-container {
-    display:flex;
-    justify-content: center;
-    border-radius: 8px;
-    background: #f9f9f9;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;
+  background: #f9f9f9;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-
 .form-group {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .form-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
 }
 
 .form-input,
 .form-textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    background: #f9f9f9;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background: #f9f9f9;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .form-submit-btn {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 60px;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 60px;
 }
 
 .form-submit-btn:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
-
 .saved-quotes-header {
-    margin-top: 20px;
+  margin-top: 20px;
 }

@@ -1,0 +1,35 @@
+/* Add this to your global CSS */
+:root {
+  --lavender-blush: #f5e6e8;
+  --thistle: #d5c6e0;
+  --rose-quartz: #aaa1c8;
+  --mountbatten-pink: #967aa1;
+  --space-cadet: #192a51;
+  --underline-color: #967aa1;
+}
+
+body {
+  background-color: var(--lavender-blush);
+}
+
+.custom-form-input:focus {
+  border-color: var(--underline-color);
+  box-shadow: 0 0 0 0.2rem rgba(150, 122, 161, 0.25);
+}
+
+.custom-form-button {
+  background-color: var(--space-cadet);
+  border: none;
+}
+
+.custom-form-button:hover {
+  background-color: var(--mountbatten-pink);
+}
+
+.custom-link {
+  color: var(--rose-quartz);
+}
+
+.custom-link:hover {
+  color: var(--thistle);
+}

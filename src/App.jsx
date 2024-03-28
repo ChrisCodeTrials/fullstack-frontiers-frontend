@@ -31,7 +31,6 @@ function App() {
           <Route path="/appointments/appointment/:appointment_id" element={<AppointmentDetails />} />
         </Route>
       </Routes>
-
     </div>
   );
 }
