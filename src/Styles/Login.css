@@ -18,7 +18,7 @@ body {
 }
 
 .custom-form-button {
-  background-color: var(--space-cadet);
+  background-color: var(--space-cadet) !important;
   border: none;
 }
 

@@ -1,0 +1,70 @@
+.text-center {
+  color: var(--space-cadet);
+}
+
+.card {
+  background-color: var(--lavender-blush);
+  border: 1px solid var(--mountbatten-pink);
+}
+
+.card-title {
+  color: var(--space-cadet);
+}
+
+.card-text {
+  color: var(--space-cadet);
+}
+
+.card-body {
+  position: relative;
+}
+
+ul.list-unstyled {
+  background-color: var(--thistle);
+  padding: 20px;
+  border-radius: 8px;
+  color: var(--space-cadet);
+}
+
+/* Login/Register Section */
+.login-register-section {
+  background-color: var(--space-cadet);
+  color: var(--lavender-blush);
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: 8px;
+}
+
+.login-register-section .btn-primary {
+  background-color: var(--mountbatten-pink);
+  border-color: var(--mountbatten-pink);
+}
+
+.login-register-section .btn-secondary {
+  background-color: var(--rose-quartz);
+  border-color: var(--rose-quartz);
+}
+
+.login-register-section .btn-primary:hover,
+.login-register-section .btn-secondary:hover {
+  opacity: 0.8;
+}
+
+.back-to-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: var(--space-cadet);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  z-index: 1050;
+}
+
+.card-link {
+  color: var(--rose-quartz);
+  text-decoration: underline;
+}

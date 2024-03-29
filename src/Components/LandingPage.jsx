@@ -1,40 +1,63 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Carousel, Container, Row, Col, Card } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Styles/LandingPage.css";
 
 const LandingPage = () => {
+  const navigate = useNavigate();
+  const [showTopBtn, setShowTopBtn] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowTopBtn(window.scrollY > 300);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   const testimonials = [
     {
       name: "Jordan Miles",
       review:
-        "Incredibly empathetic and professional. Helped me navigate through tough times.",
-      stars: 5,
+        "Incredibly professional and supportive, providing clear paths toward wellness.",
+      stars: Math.floor(Math.random() * (5 - 4 + 1)) + 4,
     },
     {
       name: "Alex Quinn",
       review:
-        "Provided excellent support and practical strategies for dealing with anxiety.",
-      stars: 4,
+        "Offered fantastic support and actionable strategies for better mental health.",
+      stars: Math.floor(Math.random() * (5 - 4 + 1)) + 4,
     },
     {
       name: "Casey Lee",
       review:
-        "Very patient and understanding. I felt truly supported in my journey to wellness.",
-      stars: 5,
+        "Truly understanding and patient, making the journey to wellness feel supported.",
+      stars: Math.floor(Math.random() * (5 - 4 + 1)) + 4,
     },
     {
       name: "Morgan Kim",
       review:
-        "Great at listening, but I felt the approach was somewhat generic.",
-      stars: 3,
+        "Their approach to mental health is both innovative and deeply empathetic.",
+      stars: Math.floor(Math.random() * (5 - 4 + 1)) + 4,
     },
   ];
 
   const renderStars = (rating) => {
     let stars = "";
     for (let i = 0; i < 5; i++) {
-      stars += i < rating ? "★" : "☆";
+      stars += i < Math.floor(rating) ? "★" : "☆";
     }
     return <div className="star-rating">{stars}</div>;
   };
@@ -49,9 +72,8 @@ const LandingPage = () => {
             journey, MindEase is here to support you every step of the way.
           </p>
           <Button
-            variant="primary"
-            href="#schedule"
-            className="appointment-button mb-3"
+            className="custom-appointment-button mb-3"
+            onClick={() => navigate("/login")}
           >
             Schedule Your Appointment
           </Button>
@@ -62,9 +84,17 @@ const LandingPage = () => {
               className="img-fluid hero-illustration"
             />
           </div>
+          {showTopBtn && (
+            <button
+              onClick={scrollToTop}
+              className="back-to-top-btn"
+              aria-label="Back to top"
+            >
+              ↑ Top
+            </button>
+          )}
         </Container>
       </section>
-
       <section className="features-section py-5">
         <Container>
           <h2 className="section-title">Features</h2>
@@ -156,7 +186,7 @@ const LandingPage = () => {
         </Container>
       </section>
 
-      <footer className="footer text-white text-center p-2 mt-5">
+      <footer className="footer text-white text-center">
         <Container>
           <p>MindEase &copy; {new Date().getFullYear()}</p>
         </Container>
