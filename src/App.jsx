@@ -12,6 +12,7 @@ import AboutUs from "./Components/AboutUs";
 import Resources from "./Components/Resources";
 import QuoteDetails from "./Components/QuoteDetails";
 import AppointmentDetails from "./Components/AppointmentDetails";
+import ScheduleAppointment from "./Components/ScheduleAppointment";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/quotes" element={<MotivationalQuotes />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/quotes/quote/:id" element={<QuoteDetails />}/>
+          <Route path="/appointments/create" element={<ScheduleAppointment />}/>
           <Route path="/appointments/appointment/:appointment_id" element={<AppointmentDetails />} />
         </Route>
       </Routes>
