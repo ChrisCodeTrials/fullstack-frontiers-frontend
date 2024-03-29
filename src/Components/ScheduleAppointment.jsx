@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useOutletContext } from 'react-router-dom';
-import { updateAppointment } from '../helpers/fetch';
+import { updateAppointment, updateDoctor } from '../helpers/fetch';
 
 const API = import.meta.env.VITE_BASE_URL;
 
@@ -56,9 +56,15 @@ const ScheduleAppointment = () => {
         const {id:appt_id} = chosenAppointment
         const {id:user_id} = user
         const {id:doctor_id} = chosenDoctor
+
         chosenAppointment.user_id = user_id
+        chosenDoctor.appt_id = appt_id
+
         updateAppointment(chosenAppointment,appt_id)
         .then((res)=> console.log(res))
+        
+        updateDoctor(chosenDoctor, doctor_id)
+        .then((res)=>console.log(res))
    
        
 
