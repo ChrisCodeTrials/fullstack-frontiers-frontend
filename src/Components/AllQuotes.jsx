@@ -21,7 +21,7 @@ const AllQuotes = () => {
         <h2>View All Quotes</h2>
         <ul>
           {allQuotes.map((quote, index) => (
-           <Link to={`/quotes/quote/${quote.id}`}><li key={index}>{quote.quote}</li></Link> 
+           <Link to={`/quotes/quote/${quote.id}`} key={quote.id}><li>{quote.quote}</li></Link> 
           ))}
       </ul>
       <Link to="/quote/create"><h4>Create a quote</h4></Link> 
