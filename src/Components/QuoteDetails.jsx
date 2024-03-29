@@ -26,6 +26,14 @@ const QuoteDetails = () => {
             <p className='closing-quote'>"</p>
         </div>
         <h2 className='quote-author'>- {quote.author}</h2>
+        {quote.user_id ? (
+            <div>
+              <button>Edit Quote</button>
+              <button>Delete Quote</button>
+            </div>
+        ): (
+          null
+        )}
     </div>
   )
 }
