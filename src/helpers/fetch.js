@@ -24,3 +24,22 @@ export function updateAppointment(appointment, id){
         })
 }
 
+export function updateDoctor(doctor,id){
+    return fetch(`${API}/api/doctors/${id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+            "CSRF-Token": csrfToken,
+        },
+        credentials: "include",
+        body: JSON.stringify(doctor)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to update appointment');
+        }
+            // Handle success if needed
+            return response.json();
+        })
+}
+
