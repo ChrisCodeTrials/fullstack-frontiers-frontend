@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import "../Styles/QuoteDetails.css"
 
 const API = import.meta.env.VITE_BASE_URL
@@ -7,11 +7,36 @@ const API = import.meta.env.VITE_BASE_URL
 const QuoteDetails = () => {
     const [quote, setQuote] = useState({})
     const { id } = useParams()
+    const navigate = useNavigate()
+
+
     useEffect(()=>{
         fetch(`${API}/api/quotes/${id}`)
         .then((res)=> res.json())
         .then((resJSON)=> setQuote(resJSON))
     },[id])
+
+    const handleDelete = (id) => {
+      const csrfToken = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("XSRF-TOKEN="))
+      .split("=")[1];
+      const options = {
+        method: "Delete",
+        headers: {
+          "Content-Type": "application/json",
+          "CSRF-Token": csrfToken,
+        },
+         credentials: "include",
+      };
+
+      fetch(`${API}/api/quotes/${id}`, options)
+       .then((res) => res.json())
+       .then(() => {
+          navigate("/quotes")
+       })
+       .catch((err) => console.error("403"))
+    }
 
     
 
@@ -29,7 +54,7 @@ const QuoteDetails = () => {
         {quote.user_id ? (
             <div>
               <button>Edit Quote</button>
-              <button>Delete Quote</button>
+              <button onClick={() => handleDelete(quote.id)}>Delete Quote</button>
             </div>
         ): (
           null
