@@ -7,11 +7,12 @@ import Dashboard from "./Components/Dashboard";
 import HeaderNav from "./Components/HeaderNav";
 import LandingPage from "./Components/LandingPage";
 import FindDoctor from "./Components/FindDoctor";
-import MotivationalQuotes from "./Components/MotivationalQuotesForm";
 import AboutUs from "./Components/AboutUs";
 import Resources from "./Components/Resources";
 import QuoteDetails from "./Components/QuoteDetails";
+import MotivationalQuotes from "./Components/MotivationalQuotesForm"
 import AppointmentDetails from "./Components/AppointmentDetails";
+import AllQuotes from "./Components/AllQuotes";
 
 function App() {
   return (
@@ -25,7 +26,8 @@ function App() {
         <Route element={<ProtectedRoute />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/find-doctor" element={<FindDoctor />} />
-          <Route path="/quotes" element={<MotivationalQuotes />} />
+          <Route path="/quotes" element={<AllQuotes />} />
+          <Route path="/quote/create" element={<MotivationalQuotes />}/>
           <Route path="/resources" element={<Resources />} />
           <Route path="/quotes/quote/:id" element={<QuoteDetails />}/>
           <Route path="/appointments/appointment/:appointment_id" element={<AppointmentDetails />} />

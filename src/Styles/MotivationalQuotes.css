@@ -56,13 +56,9 @@
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-top: 60px;
+  margin-top: 120px;
 }
 
 .form-submit-btn:hover {
   background-color: #0056b3;
-}
-
-.saved-quotes-header {
-  margin-top: 20px;
 }

@@ -8,6 +8,7 @@ const URL = import.meta.env.VITE_BASE_URL;
 const MotivationalQuotes = () => {
 
   const {user} = useOutletContext()
+   const navigate = useNavigate()
 
   const [quoteForm, setQuoteForm] = useState({
       user_id: user.id,
@@ -25,11 +26,6 @@ const MotivationalQuotes = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    const newQuote = {
-      author: createdAuthor,
-      quote: quote,
-      category: inputedCategory
-    }
     const csrfToken = document.cookie
     .split("; ")
     .find((row) => row.startsWith("XSRF-TOKEN="))
@@ -41,15 +37,11 @@ const MotivationalQuotes = () => {
         "CSRF-Token": csrfToken,
       },
       credentials: "include",
-      body: JSON.stringify(newQuote)
+      body: JSON.stringify(quoteForm)
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
-        setCreatedQuote([...quote, data])
-        setQuote("")
-        setCreatedAuthor("")
-        setInputedCategory("")
+          navigate("/quotes")
       })
 
       .catch((err) => console.error())
@@ -102,12 +94,6 @@ const MotivationalQuotes = () => {
           Submit
         </button>
       </form>
-    </div>
-    <div>
-      <h3 className='saved-quotes-header'>View saved quotes here !</h3>
-      <ul>
-          <li key={quoteForm.user_id}>{quoteForm.quote} - {quoteForm.author}</li>
-      </ul>
     </div>
   </div>
   )
