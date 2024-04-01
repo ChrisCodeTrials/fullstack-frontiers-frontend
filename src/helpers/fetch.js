@@ -42,4 +42,3 @@ export function updateDoctor(doctor,id){
             return response.json();
         })
 }
-

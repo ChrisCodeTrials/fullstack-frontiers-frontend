@@ -4,29 +4,26 @@ import { useParams, useOutletContext} from 'react-router-dom'
 const API = import.meta.env.VITE_BASE_URL
 
 const AppointmentDetails = () => {
-    const [appointment, setAppointment] = useState({
-        "id": 1,
-        "appt_date": "2024-03-23T04:00:00.000Z",
-        "created_at": "2024-03-21T04:00:00.000Z",
-        "appt_reason": "Cognitive Behavioral Therapy",
-        "duration": "30 minutes",
-        "location": "Manhattan",
-        "user_id": 1
-    })
+    const [appointment, setAppointment] = useState({})
     const [doctor, setDoctor] = useState({})
     const { user } = useOutletContext()
     const { appointment_id } = useParams()
     const { id : user_id } = user
 
     useEffect(()=>{
-        fetch(`${API}/api/`)
+        fetch(`${API}/api/doctors`)
+        .then((res)=> res.json())
+        .then((data)=>{
+            const foundDoctor = data.find((doctor)=> doctor.appt_id === Number(appointment_id))
+            setDoctor(foundDoctor)
+        })
     },[appointment_id])
 
-    // useEffect(()=>{
-    //     fetch(`${API}/api/appointments/${appointment_id}`)
-    //     .then((res)=> res.json())
-    //     .then((resJSON)=> setAppointment(resJSON))
-    // },[user_id])
+    useEffect(()=>{
+        fetch(`${API}/api/appointments/${appointment_id}`)
+        .then((res)=> res.json())
+        .then((resJSON)=> setAppointment(resJSON))
+    },[user_id])
     
    if(Object.keys(appointment).length === 0) return null
     
@@ -41,6 +38,7 @@ const AppointmentDetails = () => {
                 <p>{appointment.appt_reason}</p>
                 <p>{appointment.location}</p>
                 <p>{appointment.duration}</p>
+                <p>To be seen by {doctor.surname}, {doctor.specialty}</p>
             </div>
 
         ): appointment.user_id ? (

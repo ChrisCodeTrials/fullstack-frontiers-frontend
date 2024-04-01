@@ -22,8 +22,9 @@ const Dashboard = () => {
       <h1>Welcome, {user && user.username.toUpperCase()}</h1>
       <h3>This is a protected Component called Dashboard</h3>
       {/* Use user data as needed, for example: */}
-
-      <button onClick={handleLogout}>Logout</button>
+      <div>
+        <button onClick={handleLogout}>Logout</button>
+      </div>
     </div>
   )
 }
