@@ -6,11 +6,19 @@ Your Readme for your project goes here:
 
 * ERD DIAGRAM: [https://dbdiagram.io/home]
 
-[Overview and Instructions](./instructions.md)
+* [Overview and Instructions](./instructions.md)
+
+* Frontend Link: [https://github.com/ChrisCodeTrials/fullstack-frontiers-frontend]
+
+* Backend Link: [https://github.com/ChrisCodeTrials/fullstack-frontiers-backend]
+
+
 
 MINDEASE APP:
-The name of the the app is MindEase. The purpose of the app is to create a bridge and a tool to facilitate mental wellness. 
+The name of the our app is MindEase. The purpose of the app is to create a bridge and a tool to facilitate mental wellness. 
 
-The app aims to create a stigma free and motivational app for people to take care of their mental wellness needs. The app does this by giving people the option to create an account, pick a doctor of their choosing and then book an appointment.
+The app aims to create a stigma free and motivational app to help people take care of their mental wellness needs. The app facilitates this by giving people the option to create an account, pick a doctor of their choosing and then book an appointment.
 
-User Stories:
+Welcome to MindEase!
+
+
