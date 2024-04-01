@@ -14,6 +14,7 @@ import MotivationalQuotes from "./Components/MotivationalQuotesForm"
 import AppointmentDetails from "./Components/AppointmentDetails";
 import AllQuotes from "./Components/AllQuotes";
 import ScheduleAppointment from "./Components/ScheduleAppointment";
+import DeleteOrRescheduleAppt from "./Components/DeleteOrRescheduleAppt"
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="/resources" element={<Resources />} />
           <Route path="/quotes/quote/:id" element={<QuoteDetails />}/>
           <Route path="/appointments/create" element={<ScheduleAppointment />}/>
+          <Route path="/appointments/appointment/:appointment_id/reschedule" element={<DeleteOrRescheduleAppt />}  />
           <Route path="/appointments/appointment/:appointment_id" element={<AppointmentDetails />} />
         </Route>
       </Routes>
