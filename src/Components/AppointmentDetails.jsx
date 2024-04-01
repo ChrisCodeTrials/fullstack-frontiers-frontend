@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams, useOutletContext} from 'react-router-dom'
+import { useParams, useOutletContext, useNavigate} from 'react-router-dom'
 
 const API = import.meta.env.VITE_BASE_URL
 
@@ -9,6 +9,7 @@ const AppointmentDetails = () => {
     const { user } = useOutletContext()
     const { appointment_id } = useParams()
     const { id : user_id } = user
+    const navigate = useNavigate()
 
     useEffect(()=>{
         fetch(`${API}/api/doctors`)
@@ -39,6 +40,7 @@ const AppointmentDetails = () => {
                 <p>{appointment.location}</p>
                 <p>{appointment.duration}</p>
                 <p>To be seen by {doctor.surname}, {doctor.specialty}</p>
+                <button onClick={()=>navigate(`/appointments/appointment/${appointment_id}/reschedule`)}>Reschedule Appointment</button>
             </div>
 
         ): appointment.user_id ? (
