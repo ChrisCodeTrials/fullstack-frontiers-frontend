@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Button, Carousel, Container, Row, Col, Card } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Styles/LandingPage.css";
 
@@ -100,6 +100,7 @@ const LandingPage = () => {
           <h2 className="section-title">Features</h2>
           <Row className="g-4 mb-5 justify-content-center">
             <Col md={4}>
+              <Link to='/appointments/create'>
               <div className="feature-card">
                 <h3>Scheduling</h3>
                 <p>
@@ -109,8 +110,10 @@ const LandingPage = () => {
                   you need it most.
                 </p>
               </div>
+              </Link>
             </Col>
             <Col md={4}>
+              <Link to='/quotes'>
               <div className="feature-card">
                 <h3>Motivational Quotes</h3>
                 <p>
@@ -119,8 +122,10 @@ const LandingPage = () => {
                   you and your experiences.
                 </p>
               </div>
+              </Link>
             </Col>
             <Col md={4}>
+              <Link to="/resources" >
               <div className="feature-card">
                 <h3>Resources</h3>
                 <p>
@@ -129,6 +134,7 @@ const LandingPage = () => {
                   provide valuable information and support at your fingertips.
                 </p>
               </div>
+              </Link>
             </Col>
           </Row>
           <div className="illustration-container">
