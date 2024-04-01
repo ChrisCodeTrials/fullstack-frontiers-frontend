@@ -63,7 +63,7 @@ const Dashboard = ({setLogUser}) => {
                 <p>Your appointment is with {doctor.surname}</p>
                 </div>
             </Link>)
-                : <button>Schedule an Appointment</button>
+                : <button onClick={() => navigate('/appointments/create')}>Schedule an Appointment</button>
         }
       </div>
       <div>

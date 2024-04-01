@@ -22,7 +22,7 @@ const RescheduleAppointment = () => {
         updateAppointment(previousAppointment, previousAppointment.id)
         updateDoctor(previousDoctor, previousDoctor.id)
 
-        // navigate("/dashboard")
+        navigate("/dashboard")
         
     }
 
@@ -117,7 +117,7 @@ const RescheduleAppointment = () => {
                 </select>
                 <button type="submit">Schedule Appointment</button>
             </form>
-            <button onClick={handleDelete}>Delete Appointment</button>
+            <button onClick={handleDelete}>Cancel Appointment</button>
         </div>
     );
 };

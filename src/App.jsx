@@ -27,11 +27,11 @@ function App() {
         <Route path="/login" element={<Login setLogUser={setLogUser}/>} />
         <Route path="/register" element={<Register setLogUser={setLogUser}/>} />
         <Route path="/about" element={<AboutUs />} />
+        <Route path="/resources" element={<Resources logUser={logUser}/>} />
         <Route element={<ProtectedRoute />}>
           <Route path="/dashboard" element={<Dashboard  setLogUser={setLogUser}/>} />
           <Route path="/quotes" element={<AllQuotes />} />
           <Route path="/quote/create" element={<MotivationalQuotes />}/>
-          <Route path="/resources" element={<Resources />} />
           <Route path="/quotes/quote/:id" element={<QuoteDetails />}/>
           <Route path="/appointments/create" element={<ScheduleAppointment />}/>
           <Route path="/appointments/appointment/:appointment_id/reschedule" element={<DeleteOrRescheduleAppt />}  />

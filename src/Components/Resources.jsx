@@ -3,7 +3,7 @@ import { Card, Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../Styles/Resources.css";
 
-const Resources = () => {
+const Resources = ({logUser}) => {
   const [showTopBtn, setShowTopBtn] = useState(false);
 
   useEffect(() => {
@@ -145,12 +145,17 @@ const Resources = () => {
           If you're looking to seek advice from a doctor, please log in or
           register to book an appointment.
         </p>
-        <Link to="/login" className="btn btn-primary me-2">
+        {!logUser ? ( <>
+          <Link to="/login" className="btn btn-primary me-2">
           Login
         </Link>
         <Link to="/register" className="btn btn-secondary">
           Register
         </Link>
+        </>
+        )
+        : null
+        }
       </div>
 
       {showTopBtn && (
