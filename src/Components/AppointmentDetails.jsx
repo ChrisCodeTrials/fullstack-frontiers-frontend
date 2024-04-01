@@ -52,8 +52,6 @@ const AppointmentDetails = () => {
                 <h1>Sorry, but you have not scheduled this appointment!</h1>
             </div>
         )}
-
-
     </div>
   )
 }

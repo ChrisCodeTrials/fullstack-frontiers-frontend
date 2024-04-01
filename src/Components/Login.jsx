@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "../Styles/Login.css";
 
-const Login = () => {
+const Login = ({logUser, setLogUser}) => {
   const navigate = useNavigate();
   const [user, setUser] = useState({ username: "", password: "" });
 
@@ -34,6 +34,7 @@ const Login = () => {
         setUser({ username: "", password: "" });
         throw new Error("Registration failed");
       }
+      setLogUser(true)
       navigate("/dashboard");
     } catch (error) {
       console.error("Error during registration:", error);
