@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Card, Container, Row, Col } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Card, Container, Row, Col, Button } from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
 import "../Styles/Resources.css";
 
-const Resources = ({logUser}) => {
+const Resources = ({ logUser }) => {
   const [showTopBtn, setShowTopBtn] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -141,21 +142,24 @@ const Resources = ({logUser}) => {
 
       <div className="text-center mb-5">
         <h3>Interested in Speaking with a Professional?</h3>
-        <p>
-          If you're looking to seek advice from a doctor, please log in or
-          register to book an appointment.
-        </p>
-        {!logUser ? ( <>
-          <Link to="/login" className="btn btn-primary me-2">
-          Login
-        </Link>
-        <Link to="/register" className="btn btn-secondary">
-          Register
-        </Link>
-        </>
-        )
-        : null
-        }
+        {logUser ? (
+          <Button variant="primary" onClick={() => navigate("/schedule")}>
+            Schedule an Appointment
+          </Button>
+        ) : (
+          <>
+            <p>
+              If you're looking to seek advice from a doctor, please log in or
+              register to book an appointment.
+            </p>
+            <Link to="/login" className="btn btn-primary me-2">
+              Login
+            </Link>
+            <Link to="/register" className="btn btn-secondary">
+              Register
+            </Link>
+          </>
+        )}
       </div>
 
       {showTopBtn && (

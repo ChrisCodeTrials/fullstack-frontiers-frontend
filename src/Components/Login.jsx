@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "../Styles/Login.css";
 
-const Login = ({logUser, setLogUser}) => {
+const Login = ({ logUser, setLogUser }) => {
   const navigate = useNavigate();
   const [user, setUser] = useState({ username: "", password: "" });
 
@@ -32,12 +32,12 @@ const Login = ({logUser, setLogUser}) => {
       if (!res.ok) {
         alert("Login failed");
         setUser({ username: "", password: "" });
-        throw new Error("Registration failed");
+        throw new Error("Login failed");
       }
-      setLogUser(true)
+      setLogUser(true);
       navigate("/dashboard");
     } catch (error) {
-      console.error("Error during registration:", error);
+      console.error("Error during login:", error);
     }
   };
 
@@ -57,19 +57,16 @@ const Login = ({logUser, setLogUser}) => {
   };
 
   return (
-    <div className="container mt-5 py-5">
+    <div className="container mt-5 py-5 login-container">
       <div className="row justify-content-center">
         <div className="col-md-8 col-lg-6">
-          <div className="card shadow-lg">
+          <div className="card login-card">
             <div className="card-body p-5">
-              <h2
-                className="card-title text-center mb-4"
-                style={{ color: "var(--space-cadet)" }}
-              >
+              <h2 className="card-title text-center mb-4 login-title">
                 Login to Your Account
               </h2>
               <button
-                className="btn custom-form-button text-white w-100 mb-3"
+                className="btn login-btn demo-user-btn w-100 mb-3"
                 onClick={handleDemoSignIn}
               >
                 Demo User
@@ -78,8 +75,7 @@ const Login = ({logUser, setLogUser}) => {
                 <div className="mb-3">
                   <label
                     htmlFor="username"
-                    className="form-label"
-                    style={{ color: "var(--space-cadet)" }}
+                    className="form-label username-label"
                   >
                     Username
                   </label>
@@ -87,7 +83,7 @@ const Login = ({logUser, setLogUser}) => {
                     id="username"
                     value={user.username}
                     type="text"
-                    className="form-control custom-form-input"
+                    className="form-control login-input"
                     placeholder="Enter your username"
                     autoComplete="username"
                     onChange={handleChange}
@@ -96,8 +92,7 @@ const Login = ({logUser, setLogUser}) => {
                 <div className="mb-3">
                   <label
                     htmlFor="password"
-                    className="form-label"
-                    style={{ color: "var(--space-cadet)" }}
+                    className="form-label password-label"
                   >
                     Password
                   </label>
@@ -105,7 +100,7 @@ const Login = ({logUser, setLogUser}) => {
                     id="password"
                     value={user.password}
                     type="password"
-                    className="form-control custom-form-input"
+                    className="form-control login-input"
                     placeholder="Enter your password"
                     autoComplete="current-password"
                     onChange={handleChange}
@@ -113,14 +108,14 @@ const Login = ({logUser, setLogUser}) => {
                 </div>
                 <button
                   type="submit"
-                  className="btn custom-form-button text-white w-100"
+                  className="btn login-btn submit-btn w-100"
                 >
                   Login
                 </button>
               </form>
-              <p className="mt-3 text-center">
+              <p className="mt-3 text-center register-prompt">
                 No Account?{" "}
-                <Link to="/register" className="custom-link">
+                <Link to="/register" className="register-link">
                   Register Here
                 </Link>
               </p>

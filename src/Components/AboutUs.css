@@ -1,7 +1,23 @@
-body{
-    background-color: #FFDD4A;
-}
-button{
-    background-color: blue;
+.team-header h1 {
+  color: var(--space-cadet);
+  margin-bottom: 0.5rem;
 }
 
+.team-header p {
+  color: var(--thistle);
+  font-size: 1.25rem;
+}
+
+.btn-primary {
+  background-color: var(--mountbatten-pink);
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--rose-quartz);
+  color: var(--space-cadet);
+}
+
+body {
+  background-color: var(--thistle);
+}

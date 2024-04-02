@@ -108,11 +108,6 @@ h2::after {
   margin-bottom: 0;
 }
 
-.footer {
-  background-color: rgb(33, 37, 41); /* Apply the RGB color directly */
-  color: var(--lavender-blush);
-}
-
 @media (max-width: 768px) {
   .about-mindease .row,
   .features-section .row {
@@ -142,13 +137,13 @@ h2::after {
   }
 }
 .custom-appointment-button {
-  background-color: var(--mountbatten-pink); /* Button background color */
-  border: none; /* Removes the default border */
-  color: var(--lavender-blush); /* Text color */
+  background-color: var(--mountbatten-pink);
+  border: none;
+  color: var(--lavender-blush);
 }
 
 .custom-appointment-button:hover {
-  background-color: var(--rose-quartz); /* Darker shade for hover effect */
+  background-color: var(--rose-quartz);
   color: var(--space-cadet);
 }
 

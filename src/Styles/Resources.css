@@ -20,7 +20,7 @@
 }
 
 ul.list-unstyled {
-  background-color: var(--thistle);
+  background-color: var(--lavender-blush);
   padding: 20px;
   border-radius: 8px;
   color: var(--space-cadet);
@@ -55,7 +55,7 @@ ul.list-unstyled {
   bottom: 20px;
   right: 20px;
   padding: 10px 20px;
-  background-color: var(--space-cadet);
+  background-color: var(--mountbatten-pink);
   color: #ffffff;
   border: none;
   cursor: pointer;

@@ -6,17 +6,34 @@ import "../Styles/HeaderNav.css";
 
 const CustomNavbar = ({ logUser }) => {
   return (
-    <Navbar expand="lg" bg="dark" variant="dark" className="custom-navbar">
-      <Navbar.Brand as={Link} to="/" className="brand-name">
+    <Navbar expand="lg" variant="dark" className="custom-navbar">
+      <Navbar.Brand
+        as={Link}
+        to={logUser ? "/dashboard" : "/"}
+        className="brand-name"
+      >
         MindEase
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ml-auto">
-        {logUser && (
+          {logUser ? (
             <>
-              <Nav.Link as={Link} to="/dashboard" className="nav-link">
+              <Nav.Link
+                as={Link}
+                to="/dashboard"
+                className="nav-link highlight-link"
+              >
                 Dashboard
+              </Nav.Link>
+            </>
+          ) : (
+            <>
+              <Nav.Link as={Link} to="/login" className="nav-link">
+                Login
+              </Nav.Link>
+              <Nav.Link as={Link} to="/register" className="nav-link">
+                Register
               </Nav.Link>
             </>
           )}

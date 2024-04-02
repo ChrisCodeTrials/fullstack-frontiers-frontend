@@ -1,0 +1,46 @@
+:root {
+  --lavender-blush: #f5e6e8ff;
+  --thistle: #d5c6e0ff;
+  --rose-quartz: #aaa1c8ff;
+  --mountbatten-pink: #967aa1ff;
+  --space-cadet: #192a51ff;
+  --bs-card-bg: black;
+}
+.btn-custom1 {
+  background-color: var(--rose-quartz);
+  color: white;
+  border-color: var(--rose-quartz);
+}
+
+.btn-custom1:hover {
+  background-color: var(--space-cadet);
+  border-color: var(--space-cadet);
+}
+
+.btn-custom2 {
+  background-color: var(--thistle);
+  color: white;
+  border-color: var(--thistle);
+}
+
+.btn-custom2:hover {
+  background-color: var(--mountbatten-pink);
+  border-color: var(--mountbatten-pink);
+}
+
+.btn-custom3 {
+  background-color: var(--lavender-blush);
+  color: var(--space-cadet);
+  border-color: var(--lavender-blush);
+}
+
+.btn-custom3:hover {
+  background-color: var(--rose-quartz);
+  color: white;
+  border-color: var(--rose-quartz);
+}
+
+.welcome-message {
+  font-family: "Cinzel Decorative";
+  color: var(--space-cadet);
+}

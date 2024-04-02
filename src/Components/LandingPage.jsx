@@ -100,40 +100,40 @@ const LandingPage = () => {
           <h2 className="section-title">Features</h2>
           <Row className="g-4 mb-5 justify-content-center">
             <Col md={4}>
-              <Link to='/appointments/create'>
-              <div className="feature-card">
-                <h3>Scheduling</h3>
-                <p>
-                  Instantly book real-time appointments with our network of
-                  psychologists and psychiatrists. Our platform allows for
-                  immediate scheduling to ensure you find the right support when
-                  you need it most.
-                </p>
-              </div>
+              <Link to="/appointments/create">
+                <div className="feature-card">
+                  <h3>Scheduling</h3>
+                  <p>
+                    Instantly book real-time appointments with our network of
+                    psychologists and psychiatrists. Our platform allows for
+                    immediate scheduling to ensure you find the right support
+                    when you need it most.
+                  </p>
+                </div>
               </Link>
             </Col>
             <Col md={4}>
-              <Link to='/quotes'>
-              <div className="feature-card">
-                <h3>Motivational Quotes</h3>
-                <p>
-                  Discover daily quotes to inspire your mental wellness journey.
-                  Engage with our community by sharing quotes that resonate with
-                  you and your experiences.
-                </p>
-              </div>
+              <Link to="/quotes">
+                <div className="feature-card">
+                  <h3>Motivational Quotes</h3>
+                  <p>
+                    Discover daily quotes to inspire your mental wellness
+                    journey. Engage with our community by sharing quotes that
+                    resonate with you and your experiences.
+                  </p>
+                </div>
               </Link>
             </Col>
             <Col md={4}>
-              <Link to="/resources" >
-              <div className="feature-card">
-                <h3>Resources</h3>
-                <p>
-                  Access a wealth of resources including articles, tips, and
-                  guides on mental health. Our curated content is designed to
-                  provide valuable information and support at your fingertips.
-                </p>
-              </div>
+              <Link to="/resources">
+                <div className="feature-card">
+                  <h3>Resources</h3>
+                  <p>
+                    Access a wealth of resources including articles, tips, and
+                    guides on mental health. Our curated content is designed to
+                    provide valuable information and support at your fingertips.
+                  </p>
+                </div>
               </Link>
             </Col>
           </Row>
@@ -191,12 +191,6 @@ const LandingPage = () => {
           </Row>
         </Container>
       </section>
-
-      <footer className="footer text-white text-center">
-        <Container>
-          <p>MindEase &copy; {new Date().getFullYear()}</p>
-        </Container>
-      </footer>
     </div>
   );
 };

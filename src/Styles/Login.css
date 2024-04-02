@@ -16,10 +16,9 @@ body {
   border-color: var(--underline-color);
   box-shadow: 0 0 0 0.2rem rgba(150, 122, 161, 0.25);
 }
-
+.login-btn,
 .custom-form-button {
-  background-color: var(--space-cadet) !important;
-  border: none;
+  background-color: var(--mountbatten-pink) !important;
 }
 
 .custom-form-button:hover {

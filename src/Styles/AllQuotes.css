@@ -1,0 +1,61 @@
+:root {
+  --lavender-blush: #f5e6e8ff;
+  --thistle: #d5c6e0ff;
+  --rose-quartz: #aaa1c8ff;
+  --mountbatten-pink: #967aa1ff;
+  --space-cadet: #192a51ff;
+  --bs-card-bg: black;
+}
+
+.quotes-background {
+  min-height: 100vh;
+}
+
+.text-custom {
+  color: var(--space-cadet);
+  margin-bottom: 2rem;
+}
+
+.quote-card {
+  background-color: var(--lavender-blush);
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.quote-text {
+  color: var(--space-cadet);
+  font-size: 1rem;
+}
+
+.quote-link {
+  color: var(--space-cadet);
+  text-decoration: none;
+}
+
+.quote-link:hover {
+  color: var(--mountbatten-pink);
+}
+
+.create-quote-btn {
+  background-color: var(--rose-quartz);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.create-quote-btn:hover {
+  background-color: var(--thistle);
+  color: #fff;
+}
+
+.custom-inspiration-btn {
+  background-color: var(--mountbatten-pink);
+  border: none;
+  color: #ffffff;
+}
+
+.custom-inspiration-btn:hover {
+  background-color: #d8bfd8;
+  color: #ffffff;
+}

@@ -1,102 +1,95 @@
-import {useState, useEffect} from 'react'
-import { useNavigate, useOutletContext } from 'react-router-dom'
-import "../Styles/MotivationalQuotes.css"
-
+import { useState, useEffect } from "react";
+import { useNavigate, useOutletContext } from "react-router-dom";
+import { Form, Button, Container, Row, Col } from "react-bootstrap";
+import "../Styles/MotivationalQuotes.css";
 
 const URL = import.meta.env.VITE_BASE_URL;
 
 const MotivationalQuotes = () => {
-
-  const {user} = useOutletContext()
-   const navigate = useNavigate()
+  const { user } = useOutletContext();
+  const navigate = useNavigate();
 
   const [quoteForm, setQuoteForm] = useState({
-      user_id: user.id,
-      author: "",
-      quote: "",
-      category: ""
-  })
+    user_id: user.id,
+    author: "",
+    quote: "",
+    category: "",
+  });
 
- const handleChange = (e) => {
-     setQuoteForm( { ...quoteForm,
-     [e.target.id] : e.target.value
-     })
- }
+  const handleChange = (e) => {
+    setQuoteForm({ ...quoteForm, [e.target.id]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-
+    e.preventDefault();
     const csrfToken = document.cookie
-    .split("; ")
-    .find((row) => row.startsWith("XSRF-TOKEN="))
-    .split("=")[1];
+      .split("; ")
+      .find((row) => row.startsWith("XSRF-TOKEN="))
+      .split("=")[1];
+
     fetch(`${URL}/api/quotes`, {
-      method:"POST",
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
         "CSRF-Token": csrfToken,
       },
       credentials: "include",
-      body: JSON.stringify(quoteForm)
+      body: JSON.stringify(quoteForm),
     })
       .then((res) => res.json())
       .then((data) => {
-          navigate("/quotes")
+        navigate("/quotes");
       })
-
-      .catch((err) => console.error())
-  }
+      .catch((err) => console.error());
+  };
 
   return (
-    <div className='form-page'>
-    <h1 className='form-header'>Create Quote</h1>
-    <div className="form-container"> 
-      <form onSubmit={handleSubmit} className="form">
-        <div className="form-group">
-          <label htmlFor="quote" className="form-label"></label>
-          <textarea
-            id="quote"
-            required
-            value={quoteForm.quote}
-            onChange={handleChange}
-            placeholder="Enter Quote..."
-            rows="4"
-            className="form-textarea"
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor='author' className="form-label"></label>
-          <input
-            type="text"
-            required
-            id="author"
-            placeholder="Author"
-            value={quoteForm.author} 
-            onChange={handleChange}
-            className="form-input"
-          />
-        </div>
-        <div>
-          <label htmlFor='category' className='form-label'/>
-          <input 
-          type="text"
-          id="category"
-          placeholder='Enter Category'
-          value={quoteForm.category}
-          onChange={handleChange}
-          className='form-input'
-          />
-        </div>
-        <button
-          type="submit"
-          className="form-submit-btn"
-        >
-          Submit
-        </button>
-      </form>
-    </div>
-  </div>
-  )
-}
+    <Container className="mt-5">
+      <Row className="justify-content-center">
+        <Col md={8} lg={6}>
+          <h1 className="text-center mb-4">Create Quote</h1>
+          <Form onSubmit={handleSubmit}>
+            <Form.Group className="mb-3">
+              <Form.Label htmlFor="quote">Quote</Form.Label>
+              <Form.Control
+                as="textarea"
+                id="quote"
+                required
+                value={quoteForm.quote}
+                onChange={handleChange}
+                placeholder="Enter Quote..."
+                rows={4}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label htmlFor="author">Author</Form.Label>
+              <Form.Control
+                type="text"
+                required
+                id="author"
+                placeholder="Author"
+                value={quoteForm.author}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label htmlFor="category">Category</Form.Label>
+              <Form.Control
+                type="text"
+                id="category"
+                placeholder="Enter Category"
+                value={quoteForm.category}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            <Button variant="primary" type="submit" className="w-100">
+              Submit
+            </Button>
+          </Form>
+        </Col>
+      </Row>
+    </Container>
+  );
+};
 
-export default MotivationalQuotes
+export default MotivationalQuotes;
