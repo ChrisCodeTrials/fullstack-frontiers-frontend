@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate, useOutletContext } from "react-router-dom";
-import { Card } from "react-bootstrap";
+import { Form, Button, Card } from "react-bootstrap";
 import "../Styles/QuoteDetails.css";
 
 const API = import.meta.env.VITE_BASE_URL;
@@ -100,7 +100,7 @@ const QuoteDetails = () => {
           <blockquote className="blockquote mb-0">
             <p>"{quote.quote}"</p>
             <footer className="blockquote-footer" style={{ color: "white" }}>
-              - {quote.author}
+              {quote.author}
             </footer>
           </blockquote>
         </Card.Body>
@@ -124,7 +124,44 @@ const QuoteDetails = () => {
               Delete Quote
             </button>
             {toggleQuoteForm && (
-              <form onSubmit={handleSubmit} className="mt-3"></form>
+              <Form onSubmit={handleSubmit}>
+              <Form.Group className="mb-3">
+                <Form.Label htmlFor="quote">Quote</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  id="quote"
+                  required
+                  value={quoteForm.quote}
+                  onChange={handleChange}
+                  placeholder="Enter Quote..."
+                  rows={4}
+                />
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label htmlFor="author">Author</Form.Label>
+                <Form.Control
+                  type="text"
+                  required
+                  id="author"
+                  placeholder="Author"
+                  value={quoteForm.author}
+                  onChange={handleChange}
+                />
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label htmlFor="category">Category</Form.Label>
+                <Form.Control
+                  type="text"
+                  id="category"
+                  placeholder="Enter Category"
+                  value={quoteForm.category}
+                  onChange={handleChange}
+                />
+              </Form.Group>
+              <Button variant="primary" type="submit" className="w-100">
+                Submit
+              </Button>
+            </Form>
             )}
           </Card.Footer>
         )}
